@@ -1,0 +1,12 @@
+[project]
+name = "bootcamp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.124.4",
+    "pymongo>=4.15.5",
+    "scrapy>=2.13.4",
+    "scrapy-playwright>=0.0.44",
+]
