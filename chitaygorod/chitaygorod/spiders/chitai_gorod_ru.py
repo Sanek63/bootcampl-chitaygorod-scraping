@@ -30,9 +30,12 @@ class ChitaiGorodRuSpider(scrapy.spiders.SitemapSpider):
         new_price = response.xpath("//div[@class='product-offer']//meta[@itemprop='price']/@content").get()
         if not new_price:
             return 0, "RUB"
+
         if "." in new_price:
             new_price = new_price.split(".")[0]
+
         new_currency = response.xpath("//div[@class='product-offer']//meta[@itemprop='priceCurrency']/@content").get()
+
         return int(new_price), new_currency
 
     def parse(self, response):
